@@ -71,7 +71,7 @@ let handleMessageFromPeer = async (message, MemberId) => {
     }
 
     if(message.type === 'candidate'){
-        if(peerConnection){
+        if(peerConnection && peerConnection.remoteDescription){
             peerConnection.addIceCandidate(message.candidate)
         }
     }
